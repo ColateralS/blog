@@ -1,0 +1,13 @@
+<?php
+    require_once("libs/Session.php");
+    require_once('libs/RouterLoader.php');
+    require_once('libs/Route.php');
+    require_once('libs/Router.php');
+    require_once("libs/Controller.php");
+    require_once("libs/PDODB.php");
+    require_once("libs/MySQLDB.php");
+    require_once("libs/Constantes.php");
+    require_once("libs/funciones.php");
+    ##require_once('libs/Log.php');
+    ##require_once('libs/Breadcumb.php');
+?>

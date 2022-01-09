@@ -1,0 +1,88 @@
+[E][20-12-2021 07:31:33][Portada/getNoticia]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'n.estado = 'VIG'' at line 1
+[E][23-12-2021 17:22:35][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR correo = ?) AND clave = ? AND estado = 'A'' at line 1
+[E][23-12-2021 17:23:55][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR correo = ?) AND clave = ? AND estado == 'A'' at line 1
+[E][23-12-2021 17:26:50][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR correo = ?) AND clave = ? AND estado = 'A'' at line 1
+[E][23-12-2021 17:52:18][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR correo = ?) AND clave = ? AND estado = 'A'' at line 1
+[E][23-12-2021 17:53:28][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR correo = ?) AND clave = ? AND estado = 'A'' at line 1
+[E][23-12-2021 17:53:57][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR correo = ?) AND clave = ? AND estado = 'A'' at line 1
+[E][23-12-2021 17:59:33][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(s.nombreCorto = ? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][23-12-2021 18:00:49][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(s.nombreCorto = ? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][23-12-2021 18:01:40][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(s.nombreCorto = '?' OR s.correo = 'A') AND s.clave = 'a' AND s.estado = 'A'' at line 1
+[E][23-12-2021 18:01:41][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(s.nombreCorto = '?' OR s.correo = 'A') AND s.clave = 'a' AND s.estado = 'A'' at line 1
+[E][23-12-2021 18:02:29][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][23-12-2021 18:27:05][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][23-12-2021 18:39:03][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][23-12-2021 18:40:35][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][23-12-2021 18:42:15][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][23-12-2021 18:42:44][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][23-12-2021 18:43:07][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][23-12-2021 18:43:27][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][23-12-2021 18:48:53][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][23-12-2021 18:49:27][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][23-12-2021 18:49:30][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][23-12-2021 18:52:42][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][27-12-2021 17:41:07][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][27-12-2021 18:11:06][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][27-12-2021 18:17:15][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][27-12-2021 18:21:08][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][27-12-2021 18:23:25][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][27-12-2021 18:27:08][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][27-12-2021 18:29:47][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][27-12-2021 18:31:56][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][27-12-2021 18:32:24][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][27-12-2021 18:33:19][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][27-12-2021 18:33:43][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ? AND s.estado = 'A'' at line 1
+[E][27-12-2021 18:34:00][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ?' at line 1
+[E][27-12-2021 18:35:49][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ?' at line 1
+[E][27-12-2021 18:36:37][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ?' at line 1
+[E][27-12-2021 18:37:00][Login/checkLogin]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? OR s.correo = ?) AND s.clave = ?' at line 1
+[E][31-12-2021 05:12:36][Topic/get_topics]: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'bd_periodico.t'
+[E][31-12-2021 05:13:04][Topic/get_topics]: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'bd_periodico.t'
+[E][31-12-2021 05:13:29][Topic/get_topics]: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'bd_periodico.t'
+[E][31-12-2021 05:14:52][Topic/get_topics]: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'bd_periodico.t'
+[E][31-12-2021 05:18:01][Noticia/getNoticia]: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'bd_periodico.t'
+[E][31-12-2021 05:21:43][Noticia/getNoticia]: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'bd_periodico.t'
+[E][31-12-2021 05:24:00][Noticia/getNoticia]: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'bd_periodico.t'
+[E][31-12-2021 05:25:29][Noticia/getNoticia]: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'bd_periodico.t'
+[E][31-12-2021 05:28:55][Noticia/getNoticia]: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'bd_periodico.t'
+[E][31-12-2021 05:30:24][Noticia/getNoticia]: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'bd_periodico.t'
+[E][31-12-2021 05:30:41][Noticia/getNoticia]: SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'bd_periodico.t'
+[E][03-01-2022 06:25:47][Portada/getNoticia]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.nombre FROM noticia n, categoria c WHERE n.estado = 'PB' AND c.id = n.idCate...' at line 1
+[E][03-01-2022 07:31:59][Portada/getNoticia]: Column 'embebido' in field list is ambiguous
+[E][03-01-2022 07:35:55][Portada/getNoticia]: Column 'embebido' in field list is ambiguous
+[E][03-01-2022 07:35:56][Portada/getNoticia]: Column 'embebido' in field list is ambiguous
+[E][03-01-2022 08:38:42][Portada/getNoticia]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'n.estado = 'PB' AND c.id = n.idCategoria AND c.estado = 'VIG' ORDER BY n.fech...' at line 1
+[E][03-01-2022 08:39:00][Portada/getNoticia]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'n.estado = 'PB' AND c.id = n.idCategoria AND c.estado = 'VIG' ORDER BY n.fech...' at line 1
+[E][03-01-2022 08:39:04][Portada/getNoticia]: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'n.estado = 'PB' AND c.id = n.idCategoria AND c.estado = 'VIG' ORDER BY n.fech...' at line 1
+[E][03-01-2022 20:13:41][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:14:24][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:15:25][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:15:41][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:16:11][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:20:53][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:21:57][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:23:57][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:24:31][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:27:26][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:27:39][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:31:47][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:33:48][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:34:25][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:39:09][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:39:13][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:40:29][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:42:33][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:51:59][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:53:00][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:53:40][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 20:54:09][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 21:05:45][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+[E][03-01-2022 21:08:25][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[E][03-01-2022 21:09:31][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[E][03-01-2022 21:09:57][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[E][03-01-2022 21:10:00][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[E][03-01-2022 21:10:39][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[E][03-01-2022 21:13:06][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[E][03-01-2022 21:29:10][Noticia/crearNoticia]: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'idCategoria' cannot be null
+[E][03-01-2022 21:30:11][Noticia/crearNoticia]: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'idCategoria' cannot be null
+[E][03-01-2022 22:26:15][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
