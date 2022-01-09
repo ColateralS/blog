@@ -1,6 +1,7 @@
 <?php
 
-class CategoriaController extends Controller {
+class CategoriaController extends Controller
+{
 
     private $model;
 
@@ -11,20 +12,20 @@ class CategoriaController extends Controller {
     {
         $this->model = $this->model("Categoria");
     }
+    
+    function display($page = 1)
+    {
+        $params = array(
+            'page' => intval(filter_var($page, FILTER_VALIDATE_INT))
+        );
+        $data = $this->model->getCategoria($params);
 
-    /*
-     * Funcion para poder presentar la forma para el ingreso de los datos de un usuario que se vaya a registrar
-     * en el aplicativo y pueda loguearse en otra ocasion
-    */
-    function display() {
-         /*
-         * Se activa la bandera para indicarle a la vista que debe presentar las opciones para 
-         * ingresar los campos de registro de un usuario
-        */
-        $data['display'] = true; 
+        $data['display'] = true;
+
         $this->view("CategoriaView", $data); // Se invoca a la Vista
     }
 
-    function register() {
+    function register()
+    {
     }
-}   
+}

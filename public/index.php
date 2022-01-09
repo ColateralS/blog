@@ -39,6 +39,7 @@
     $router->registrarEnrutador(new Route('/^\/blog\/notice-form/', 'NoticiaController', 'display'));
     $router->registrarEnrutador(new Route('/^\/blog\/crear-noticia-form/', 'NoticiaController', 'displayCrearNoticia'));
     $router->registrarEnrutador(new Route('/^\/blog\/crear-noticia/', 'NoticiaController', 'crearNoticia'));
+    // $router->registrarEnrutador(new Route('/^\/blog\/delete-notice', 'NoticiaController', 'eliminarNoticia'));
 
     // Desglos de una Noticia
     $router->registrarEnrutador(new Route('/^\/blog\/detailNotice-form\/(\w+)$/', 'DesgloseNoticiaController', 'detail'));

@@ -86,3 +86,36 @@
 [E][03-01-2022 21:29:10][Noticia/crearNoticia]: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'idCategoria' cannot be null
 [E][03-01-2022 21:30:11][Noticia/crearNoticia]: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'idCategoria' cannot be null
 [E][03-01-2022 22:26:15][DesgloseNoticia/crearDesgloseNoticia]: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[E][09-01-2022 20:18:13][Categoria/getCategoria]: Unknown column 'id' in 'field list'
+[E][09-01-2022 20:18:31][Categoria/getCategoria]: Unknown column 'id' in 'field list'
+[E][09-01-2022 20:18:57][Categoria/getCategoria]: Unknown column 'id' in 'field list'
+[E][09-01-2022 20:19:17][Categoria/getCategoria]: Unknown column 'id' in 'field list'
+[E][09-01-2022 20:23:01][Categoria/getCategoria]: Unknown column 'id' in 'field list'
+[E][09-01-2022 20:23:18][Categoria/getCategoria]: Unknown column 'id' in 'field list'
+[E][09-01-2022 20:23:36][Categoria/getCategoria]: Unknown column 'id' in 'field list'
+[E][09-01-2022 20:24:24][Categoria/getCategoria]: Unknown column 'id' in 'field list'
+[E][09-01-2022 20:25:31][Categoria/getCategoria]: 
+[E][09-01-2022 20:25:35][Categoria/getCategoria]: 
+[E][09-01-2022 20:27:44][Categoria/getCategoria]: 
+[E][09-01-2022 20:29:33][Categoria/getCategoria]: 
+[E][09-01-2022 20:42:17][Categoria/getCategoria]: 
+[E][09-01-2022 20:44:44][Categoria/getCategoria]: 
+[E][09-01-2022 20:45:08][Categoria/getCategoria]: 
+[E][09-01-2022 20:45:57][Categoria/getCategoria]: 
+[E][09-01-2022 20:47:30][Categoria/getCategoria]: 
+[E][09-01-2022 20:47:53][Categoria/getCategoria]: 
+[E][09-01-2022 20:49:01][Categoria/getCategoria]: 
+[E][09-01-2022 20:53:05][Categoria/getCategoria]: 
+[E][09-01-2022 20:53:47][Categoria/getCategoria]: 
+[E][09-01-2022 20:53:50][Categoria/getCategoria]: 
+[E][09-01-2022 20:56:11][Categoria/getCategoria]: 
+[E][09-01-2022 20:58:12][Categoria/getCategoria]: 
+[E][09-01-2022 20:58:55][Categoria/getCategoria]: 
+[E][09-01-2022 21:00:46][Categoria/getCategoria]: 
+[E][09-01-2022 21:01:46][Categoria/getCategoria]: 
+[E][09-01-2022 21:02:01][Categoria/getCategoria]: 
+[E][09-01-2022 21:02:46][Categoria/getCategoria]: 
+[E][09-01-2022 21:03:07][Categoria/getCategoria]: 
+[E][09-01-2022 21:03:08][Categoria/getCategoria]: 
+[E][09-01-2022 21:03:10][Categoria/getCategoria]: 
+[E][09-01-2022 21:04:19][Categoria/getCategoria]: 
