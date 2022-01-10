@@ -367,7 +367,7 @@
                                     <td><?php echo  $value['primerApellido']; ?></td>
                                     <td><?php echo  $value['segundoApellido']; ?></td>
                                     <td><a href="/blog/eliminar-usuario/<?php echo $value['id']; ?>"><i class="fas fa-trash icon delete-icon"></i></a></td>
-                                    <td><a href="/blog/<?php echo $value['id']; ?>"><i class="fas fa-edit icon edit-icon"></i></a></td>
+                                    <td><a href="/blog/editar-usuario-form/<?php echo $value['id']; ?>"><i class="fas fa-edit icon edit-icon"></i></a></td>
                             <?php
                                     echo "</tr>";
                                 }
@@ -375,6 +375,59 @@
                             ?>
                         </tbody>
                     </table>
+                </div>
+            </div>
+        <?php } elseif (isset($data['update'])) { ?>
+            <div class="vertical-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Editar Usuario</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+
+                            <form id="formCategoria" action="/blog/editar-usuario/<?php echo $data['params'] ?>" method="POST" novalidate enctype="multipart/form-data">
+
+
+                                <div class="row form-group">
+                                    <div class="col-md-6 col-12">
+                                        <label for="nuc">Nuc</label>
+                                        <input type="text" name="nuc" class="form-control" id="nuc" maxlength="15"/>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <label for="primerNombre">Primer Nombre (*)</label>
+                                        <input type="text" name="primerNombre" class="form-control" id="pNombre" maxlength="50">
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <label for="segundoNombre">Segundo Nombre</label>
+                                        <input type="text" name="segundoNombre" class="form-control" id="sNombre" maxlength="50">
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <label for="primerApellido">Primer Apellido (*)</label>
+                                        <input type="text" name="primerApellido" class="form-control" id="pApellido" maxlength="50"/>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <label for="segundoApellido">Segundo Apellido</label>
+                                        <input type="text" name="segundoApellido" class="form-control" id="sApellido" maxlength="50"/>
+                                    </div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col-6">
+                                        <button class="btn btn-primary btn-block" name="action" type="submit">Crear</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-primary btn-block" name="back" type="button">Volver</button>
+                                    </div>
+                                </div>
+
+                            </form>
+
+
+                        </div>
+                    </div>
                 </div>
             </div>
         <?php } ?>

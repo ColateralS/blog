@@ -35,7 +35,32 @@ class Categoria
         }
 
         $db->close();
+        print_r($data);
+        return $data;
+    }
 
+    function getCategoriaPorID($idCat){
+        $db = new MySQLDB();
+        $data = array();
+        $data['categorias'] = array();
+
+        try {
+            $sql = "SELECT * FROM categoria WHERE id = $idCat";
+
+            if (isModeDebug()) {
+                writeLog(INFO_LOG, "Categoria/getCategoria", $sql);
+            }
+            $datadb = $db->getData($sql);
+            $data['categorias'] = $datadb;
+        } catch (Exception $e) {
+            $data['show_message_info'] = true;
+            $data['success'] = false;
+            $data['message'] = ERROR_GENERAL;
+            writeLog(ERROR_LOG, "Portada/getNoticia", $e->getMessage());
+        }
+
+        $db->close();
+        print_r($data);
         return $data;
     }
 
@@ -130,11 +155,12 @@ class Categoria
 
         try {
 
-            $sql = "UPDATE categoria SET nombre = ?, descripcion = ? WHERE id = 1";
+            $sql = "UPDATE categoria SET nombre = ?, descripcion = ? WHERE id = ?";
 
             $paramsDB = array(
                 $params['nombre'],
                 $params['descripcion'],
+                $params['id'],
             );
 
             if (isModeDebug()) {

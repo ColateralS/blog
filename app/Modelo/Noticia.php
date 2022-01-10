@@ -172,4 +172,46 @@ class Noticia
         $db->close();
         return $data; // Se retorna la informacion generada al momento de crear el usuario
     }
+
+    function editarNoticia($params)
+    {
+        $db = new PDODB();
+        $data = array();
+        $data['show_message_info'] = true;
+
+        $paramsDB = array();
+
+        try {
+
+            $sql = "UPDATE noticia SET titulo = ?, detalle = ? WHERE id = ?";
+
+            $paramsDB = array(
+                $params['titulo'],
+                $params['detalle'],
+                $params['id'],
+            );
+
+            if (isModeDebug()) {
+                writeLog(INFO_LOG, "Noticia/editarNoticia", $sql);
+                writeLog(INFO_LOG, "Noticia/editarNoticia", json_encode($paramsDB));
+            }
+
+            $data['success'] = $db->executeInstructionPrepared($sql, $paramsDB);
+
+            $data['text-center'] = true;
+            if ($data['success']) {
+                $data['message'] = "La edición se ha completado con éxito. Pulsa <a href='/blog'>aquí</a> para volver al inicio.";
+            } else {
+                $data['message'] = "La edición no se ha realizado con éxito.";
+            }
+        } catch (Exception $e) {
+            $data['success'] = false;
+            $data['message'] = ERROR_GENERAL;
+            writeLog(ERROR_LOG, "Noticia/editarNoticia", $e->getMessage());
+        }
+
+        $db->close();
+
+        return $data;
+    }
 }

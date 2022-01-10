@@ -39,7 +39,8 @@
                                             <td><?php echo $value['nombre']; ?></td>
                                             <td><?php echo  $value['descripcion']; ?></td>
                                             <td><a href="/blog/eliminar-categoria/<?php echo $value['id']; ?>"><i class="fas fa-trash icon delete-icon"></i></a></td>
-                                            <td><a href="/blog/editar-categoria-form"><i class="fas fa-edit icon edit-icon"></i></a></td>
+                                            <!-- <td><a href="/blog/editar-categoria-form"><i class="fas fa-edit icon edit-icon"></i></a></td> -->
+                                            <td><a href="/blog/editar-categoria-form/<?php echo $value['id']; ?>"><i class="fas fa-edit icon edit-icon"></i></a></td>
                                     <?php
                                             echo "</tr>";
                                         }
@@ -103,12 +104,17 @@
                             <div class="row">
                                 <div class="col-12">
 
-                                    <form id="formCategoria" action="/blog/editar-categoria" method="POST" novalidate enctype="multipart/form-data">
-
+                                    <form id="formCategoria" action="/blog/editar-categoria/<?php echo $data['params'] ?>" method="POST" novalidate enctype="multipart/form-data">
+                                        <?php 
+                                            print_r($data['categorias']);
+                                            print_r($data['params']);
+                                         ?>
                                         <div class="row form-group">
                                             <div class="col-12">
                                                 <label for="nombre">Nombre</label>
-                                                <textarea name="nombre" required class="form-control" id="nombre" cols="20" rows="4"></textarea>
+                                                <input type="text" name="nombre" class="form-control" id="nombre" maxlength="15" value="<?php if (isset($data['categorias'])) {
+                                                                                                                                            echo $data['categorias']['nombre'];
+                                                                                                                                        } ?>" />
                                             </div>
                                         </div>
 

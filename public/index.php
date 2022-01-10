@@ -33,6 +33,9 @@ $router->registrarEnrutador(new Route('/^\/blog\/register/', 'UsuarioController'
 $router->registrarEnrutador(new Route('/^\/blog\/users/', 'UsuarioController', 'displayUsers'));
 $router->registrarEnrutador(new Route('/^\/blog\/eliminar-usuario\/(\w+)$/', 'UsuarioController', 'eliminarUsuario'));
 
+$router->registrarEnrutador(new Route('/^\/blog\/editar-usuario-form\/(\w[\-\w]*)(\/\w+)?$/', 'UsuarioController', 'displayEditarUsuario'));
+$router->registrarEnrutador(new Route('/^\/blog\/editar-usuario\/(\w+)$/', 'UsuarioController', 'editarUsuario'));
+
 // Categorias
 $router->registrarEnrutador(new Route('/^\/blog\/category-form/', 'CategoriaController', 'display'));
 $router->registrarEnrutador(new Route('/^\/blog\/crear-categoria-form/', 'CategoriaController', 'displayCrearCategoria'));
@@ -40,14 +43,17 @@ $router->registrarEnrutador(new Route('/^\/blog\/crear-categoria/', 'CategoriaCo
 $router->registrarEnrutador(new Route('/^\/blog\/category-register/', 'CategoriaController', 'register'));
 $router->registrarEnrutador(new Route('/^\/blog\/eliminar-categoria\/(\w+)$/', 'CategoriaController', 'eliminarCategoria'));
 
-$router->registrarEnrutador(new Route('/^\/blog\/editar-categoria-form/', 'CategoriaController', 'displayEditarCategoria'));
-$router->registrarEnrutador(new Route('/^\/blog\/editar-categoria/', 'CategoriaController', 'editarCategoria'));
+$router->registrarEnrutador(new Route('/^\/blog\/editar-categoria-form\/(\w[\-\w]*)(\/\w+)?$/', 'CategoriaController', 'displayEditarCategoria'));
+$router->registrarEnrutador(new Route('/^\/blog\/editar-categoria\/(\w+)$/', 'CategoriaController', 'editarCategoria'));
 
 // Noticias
 $router->registrarEnrutador(new Route('/^\/blog\/notice-form/', 'NoticiaController', 'display'));
 $router->registrarEnrutador(new Route('/^\/blog\/crear-noticia-form/', 'NoticiaController', 'displayCrearNoticia'));
 $router->registrarEnrutador(new Route('/^\/blog\/crear-noticia/', 'NoticiaController', 'crearNoticia'));
 $router->registrarEnrutador(new Route('/^\/blog\/eliminar-noticia\/(\w+)$/', 'NoticiaController', 'eliminarNoticia'));
+
+$router->registrarEnrutador(new Route('/^\/blog\/editar-noticia-form\/(\w[\-\w]*)(\/\w+)?$/', 'NoticiaController', 'displayEditarNoticia'));
+$router->registrarEnrutador(new Route('/^\/blog\/editar-noticia\/(\w+)$/', 'NoticiaController', 'editarNoticia'));
 
 // Desglos de una Noticia
 $router->registrarEnrutador(new Route('/^\/blog\/detailNotice-form\/(\w+)$/', 'DesgloseNoticiaController', 'detail'));

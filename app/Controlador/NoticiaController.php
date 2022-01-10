@@ -114,4 +114,39 @@ class NoticiaController extends Controller
 
         $this->view("NoticiaView", $data);
     }
+
+    function displayEditarNoticia($params)
+    {
+        $data = array();
+        $data['update'] = true;
+
+        $data['params'] = $params;
+
+        if (isModeDebug()) {
+            writeLog(INFO_LOG, "NoticiaController/displayEditarNoticia", json_encode($data));
+        }
+
+        $this->view("NoticiaView", $data);
+    }
+
+    function editarNoticia($params)
+    {
+        if (isset($_POST) && $_SERVER['REQUEST_METHOD'] == "POST") {
+            $data = array();
+
+            $params = array(
+                'titulo' => $_POST['titulo'],
+                'detalle' => $_POST['detalle'],
+                'id' => $params,
+            );
+
+            $data = $this->model->editarNoticia($params);
+
+            if (isModeDebug()) {
+                writeLog(INFO_LOG, "NoticiaController/editarNoticia", json_encode($data));
+            }
+
+            $this->view("CategoriaView", $data);
+        }
+    }
 }

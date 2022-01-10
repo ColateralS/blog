@@ -42,7 +42,7 @@
                                             <td><?php echo  $value['fechaPublicacion']; ?></td>
                                             <td><a href="/blog/detailCreate-notice-form/<?php echo $value['idNoticia']; ?>"><i class="fas fa-plus-square icon create-icon"></i></a></td>
                                             <td><a href="/blog/eliminar-noticia/<?php echo $value['idNoticia']; ?>"><i class="fas fa-trash icon delete-icon"></i></a></td>
-                                            <td><a href="/blog/<?php echo $value['idNoticia']; ?>"><i class="fas fa-edit icon edit-icon"></i></a></td>
+                                            <td><a href="/blog/editar-noticia-form/<?php echo $value['idNoticia']; ?>"><i class="fas fa-edit icon edit-icon"></i></a></td>
                                     <?php
                                             echo "</tr>";
                                         }
@@ -125,6 +125,49 @@
                                                     <option value="PB"> Publicar </option>
                                                     <option value="NP"> No Publicar </option>
                                                 </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row form-group">
+                                            <div class="col-6">
+                                                <button class="btn btn-primary btn-block" name="action" type="submit">Crear</button>
+                                            </div>
+                                            <div class="col-6">
+                                                <button class="btn btn-primary btn-block" name="back" type="button">Volver</button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php } elseif (isset($data['update'])) { ?>
+                    <div class="vertical-center">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h4>Editar Noticia</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+
+                                    <form id="formCategoria" action="/blog/editar-noticia/<?php echo $data['params']?>" method="POST" novalidate enctype="multipart/form-data">
+
+                                        <div class="row form-group">
+                                            <div class="col-12">
+                                                <label for="titulo">Titulo</label>
+                                                <textarea name="titulo" required class="form-control" id="nombre" cols="20" rows="4"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="row form-group">
+                                            <div class="col-12">
+                                                <label for="detalle">Detalle</label>
+                                                <textarea name="detalle" required class="form-control" id="descripcion" cols="20" rows="4"></textarea>
                                             </div>
                                         </div>
 
