@@ -41,7 +41,7 @@
                                             <td><?php echo  $value['titulo']; ?></td>
                                             <td><?php echo  $value['fechaPublicacion']; ?></td>
                                             <td><a href="/blog/detailCreate-notice-form/<?php echo $value['idNoticia']; ?>"><i class="fas fa-plus-square icon create-icon"></i></a></td>
-                                            <td><a href="/blog/login"><i class="fas fa-trash icon delete-icon"></i></a></td>
+                                            <td><a href="/blog/eliminar-noticia/<?php echo $value['idNoticia']; ?>"><i class="fas fa-trash icon delete-icon"></i></a></td>
                                             <td><a href="/blog/<?php echo $value['idNoticia']; ?>"><i class="fas fa-edit icon edit-icon"></i></a></td>
                                     <?php
                                             echo "</tr>";

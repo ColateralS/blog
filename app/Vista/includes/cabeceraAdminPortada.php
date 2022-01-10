@@ -9,6 +9,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a id="categoryForm" class="dropdown-item" href="/blog/category-form/">Categorias</a>
                     <a id="noticeForm" class="dropdown-item" href="/blog/notice-form/">Noticias</a>
+                    <a id="userForm" class="dropdown-item" href="/blog/users/">Usuarios</a>
                 </div>
             </li>
         </ul>

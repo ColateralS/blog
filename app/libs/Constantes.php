@@ -42,26 +42,4 @@
     define("USER_KEY_NUMBER", 0);
     define("USER_KEY_MAYUS", 1);
     define("USER_KEY_MINUS", 2);
-
-    //  Conf Email
-
-    /*define("EMAIL_HOST", "smtp.mailtrap.io");
-    define("EMAIL_USERNAME", "8aba630f0ba7e7");
-    define("EMAIL_PASS", "407377b27bbf2c");
-    define("EMAIL_SMTPSECURE", "tls");
-    define("EMAIL_PORT", 2525);
-    define("EMAIL_ADMIN", 'ddr-288a24@inbox.mailtrap.io');*/
-
-    // Plantillas
-
-    /*define("TEMPLATE_NEW_ACCOUNT_NEED_VERIFICATION", __DIR__ . "/../templates_email/create_new_account_need_verification.html");
-    define("TEMPLATE_NEW_ACCOUNT_SUCCESS", __DIR__ . "/../templates_email/create_new_account_success.html");
-    define("TEMPLATE_EDIT_PASSWORD", __DIR__ . "/../templates_email/edit_password.html");*/
-
-    // Anuncios
-
-    /*define("SHOW_AD_MONETYZER_EACH", 4);
-    define("INDEX_AD_MEGABANNER_TOP", 0);
-    define("INDEX_AD_MEGABANNER_BOTTOM", 1);
-    define("MIN_HEIGHT_MEGABANNER", 100);*/
 ?>

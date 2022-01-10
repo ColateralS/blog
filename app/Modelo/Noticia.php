@@ -3,15 +3,18 @@
  * Clase que contendra los metodos o funciones para acceder a la base de datos
  * y traer la informacion necesaria para ser presentada o almacenar informacion
 */
-class Noticia {
+class Noticia
+{
 
-    function __construct() {
+    function __construct()
+    {
     }
 
     /*
      * Funcion para poder obtener la informacion almacenada correspondiente a una noticia
     */
-    function getNoticia($params) {
+    function getNoticia($params)
+    {
         //$db = new PDODB();
         $db = new MySQLDB();
         $data = array();
@@ -23,7 +26,7 @@ class Noticia {
              * Creo la sentencia SQL a ejecutar para obtener informacion de la noticia y sus categorias
             */
             $sql = "SELECT n.id AS idNoticia, n.idCategoria AS idCat, n.titulo, n.detalle, ";
-            $sql .= "n.embebido, n.fechaPublicacion, "; 
+            $sql .= "n.embebido, n.fechaPublicacion, ";
             $sql .= "c.nombre AS nombCat, c.descripcion AS descCat ";
             $sql .= "FROM noticia n, categoria c ";
             $sql .= "WHERE n.estado = 'PB' AND ";
@@ -35,9 +38,10 @@ class Noticia {
 
             // Se establec una cantidad de registros a ser retornados en la sentencia de consulta
             $sql .= "LIMIT ?, ?";
-            
+
             // Se envian los parametros de la cantidad de registros a presentar en la consulta
-            $paramsDB = array('ii',
+            $paramsDB = array(
+                'ii',
                 ($params['page'] - 1) * NUM_ITEMS_PAG,
                 NUM_ITEMS_PAG
             );
@@ -50,7 +54,7 @@ class Noticia {
             // Invoco la ejecucion de la sentencia con los parametros necesarios
             //$data['noticias'] = $db->getDataPrepared($sql, $paramsDB);
             $data['noticias'] = $db->getDataSinglePrepared($sql, $paramsDB);
-            
+
             // Paginacion
             $data["pag"] = $params['page'];
             $data['last_page'] = ceil($data['num_elems'] / NUM_ITEMS_PAG);
@@ -71,7 +75,8 @@ class Noticia {
      * Recibe como parametros los datos ingresados en el correspondiente formulario de ingreso, tales como:
      *      'categoriaNoticia', 'tituloNoticia', 'detalleNoticia', 'embebido', 'fechaPublicacion', 'estadoNoticia'
     */
-    function crearNoticia($params) {
+    function crearNoticia($params)
+    {
         $db = new PDODB(); // Se instancia la clase de la conexion a la Base de Datos
         $data = array();
         $data['show_message_info'] = true;
@@ -129,6 +134,42 @@ class Noticia {
 
         $db->close();
         return $data; // Se retorna la informacion generada al momento de crear el usuario
-    }   
+    }
 
+    function eliminarNoticia($id)
+    {
+        $noticeID = $id;
+        $db = new PDODB();
+        $data = array();
+        $data['show_message_info'] = true;
+        $paramsDB = array();
+
+        try {
+            $sql = "DELETE FROM noticia WHERE id = $noticeID";
+
+            if (isModeDebug()) {
+                writeLog(INFO_LOG, "Noticia/elimiarNoticia", $sql);
+                writeLog(INFO_LOG, "Noticia/eliminarNoticia", json_encode($paramsDB));
+            }
+
+            // Se invoca a la ejecucion de la sentencia
+            $success = $db->executeInstructionPrepared($sql, $paramsDB);
+
+            $data['success'] = $success;
+            $data['text-center'] = true;
+
+            if ($success) {
+                $data['message'] = "Se eliminó la noticia exitosamente. Pulsa <a href='/blog'>aquí</a> para volver al inicio.";
+            } else {
+                $data['message'] = "Su eliminación no se ha realizado con éxito. Contacte con el Administrador";
+            }
+        } catch (Exception $e) {
+            $data['success'] = false;
+            $data['message'] = ERROR_GENERAL;
+            writeLog(ERROR_LOG, "Noticia/eliminarNoticia", $e->getMessage());
+        }
+
+        $db->close();
+        return $data; // Se retorna la informacion generada al momento de crear el usuario
+    }
 }

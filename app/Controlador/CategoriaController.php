@@ -12,7 +12,7 @@ class CategoriaController extends Controller
     {
         $this->model = $this->model("Categoria");
     }
-    
+
     function display($page = 1)
     {
         $params = array(
@@ -25,7 +25,93 @@ class CategoriaController extends Controller
         $this->view("CategoriaView", $data); // Se invoca a la Vista
     }
 
+    function displayCrearCategoria()
+    {
+        $data = array();
+        $data['create'] = true;
+
+        if (isModeDebug()) {
+            writeLog(INFO_LOG, "CategoriaController/displayCrearCategoria", json_encode($data));
+        }
+
+        $this->view("CategoriaView", $data);
+    }
+
+    function crearCategoria()
+    {
+        if (isset($_POST) && $_SERVER['REQUEST_METHOD'] == "POST") {
+
+            $data = array();
+            $params = array(
+                'nombre' => $_POST['nombre'],
+                'descripcion' => $_POST['descripcion'],
+                'estado' => 'VIG'
+            );
+
+            $data = $this->model->crearCategoria($params);
+
+            if (isModeDebug()) {
+                writeLog(INFO_LOG, "CategoriaController/crearCategoria", json_encode($data));
+            }
+
+            if (!$data['success']) {
+                $data['display'] = true;
+            }
+
+            $this->view("CategoriaView", $data);
+        }
+    }
+
+    function eliminarCategoria($params)
+    {
+        $data = array();
+
+        $data = $this->model->eliminarCategoria($params);
+
+        if (isModeDebug()) {
+            writeLog(INFO_LOG, "CategoriaController/eliminarCategoria", json_encode($data));
+        }
+
+        if (!$data['success']) {
+            $data['display'] = true;
+        }
+
+        $this->view("CategoriaView", $data);
+    }
+
     function register()
     {
+    }
+
+    function displayEditarCategoria()
+    {
+        $data = array();
+        $data['update'] = true;
+
+        if (isModeDebug()) {
+            writeLog(INFO_LOG, "CategoriaController/displayEditarCategoria", json_encode($data));
+        }
+
+        $this->view("CategoriaView", $data);
+    }
+
+    function editarCategoria()
+    {
+        if (isset($_POST) && $_SERVER['REQUEST_METHOD'] == "POST") {
+            $data = array();
+
+            $params = array(
+                'nombre' => $_POST['nombre'],
+                'descripcion' => $_POST['descripcion']
+            );
+
+            $data = $this->model->editarCategoria($params);
+
+            if (isModeDebug()) {
+                writeLog(INFO_LOG, "CategoriaController/editarCategoria", json_encode($data));
+            }
+
+            $this->view("CategoriaView", $data);
+        }
     }
 }

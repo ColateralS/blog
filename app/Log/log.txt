@@ -119,3 +119,31 @@
 [E][09-01-2022 21:03:08][Categoria/getCategoria]: 
 [E][09-01-2022 21:03:10][Categoria/getCategoria]: 
 [E][09-01-2022 21:04:19][Categoria/getCategoria]: 
+[E][10-01-2022 00:09:07][Categoria/crearCategoria]: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'descripcion' cannot be null
+[E][10-01-2022 00:10:57][Categoria/crearCategoria]: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'descripcion' cannot be null
+[E][10-01-2022 00:11:20][Categoria/crearCategoria]: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'nombre' cannot be null
+[E][10-01-2022 00:12:00][Categoria/crearCategoria]: SQLSTATE[HY093]: Invalid parameter number
+[E][10-01-2022 00:12:46][Categoria/crearCategoria]: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[E][10-01-2022 00:13:46][Portada/getNoticia]: Unknown column 'c.estado' in 'where clause'
+[E][10-01-2022 00:13:50][Portada/getNoticia]: Unknown column 'c.estado' in 'where clause'
+[E][10-01-2022 00:14:43][Portada/getNoticia]: Unknown column 'c.estado' in 'where clause'
+[E][10-01-2022 00:14:51][Portada/getNoticia]: Unknown column 'c.estado' in 'where clause'
+[E][10-01-2022 00:21:05][Categoria/crearCategoria]: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[E][10-01-2022 00:21:07][Categoria/crearCategoria]: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1
+[E][10-01-2022 00:21:29][Categoria/crearCategoria]: SQLSTATE[HY093]: Invalid parameter number
+[E][10-01-2022 01:28:27][Categoria/editarCategoria]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = ?' at line 1
+[E][10-01-2022 01:58:32][Categoria/editarCategoria]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = 1' at line 1
+[E][10-01-2022 01:58:35][Categoria/editarCategoria]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = 1' at line 1
+[E][10-01-2022 02:00:33][Categoria/editarCategoria]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = 1' at line 1
+[E][10-01-2022 02:01:26][Categoria/editarCategoria]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = 1' at line 1
+[E][10-01-2022 02:03:04][Categoria/editarCategoria]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = 1' at line 1
+[E][10-01-2022 02:03:08][Categoria/editarCategoria]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = 1' at line 1
+[E][10-01-2022 02:04:21][Categoria/editarCategoria]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = 1' at line 1
+[E][10-01-2022 02:04:28][Categoria/editarCategoria]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = 1' at line 1
+[E][10-01-2022 02:05:25][Categoria/editarCategoria]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = 1' at line 1
+[E][10-01-2022 02:05:54][Categoria/editarCategoria]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = 1' at line 1
+[E][10-01-2022 02:06:22][Categoria/editarCategoria]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = 1' at line 1
+[E][10-01-2022 02:22:15][Categoria/editarCategoria]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = 1' at line 1
+[E][10-01-2022 02:24:37][Categoria/editarCategoria]: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE id = 1' at line 1
+[E][10-01-2022 02:27:55][Categoria/editarCategoria]: SQLSTATE[HY093]: Invalid parameter number
+[E][10-01-2022 02:33:37][Categoria/editarCategoria]: SQLSTATE[HY093]: Invalid parameter number

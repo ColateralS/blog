@@ -127,6 +127,32 @@ class Usuario
             array_push($errors, "Las contraseña no coinciden.");
         }
     }
+
+    function getUsuarios($params)
+    {
+        $db = new MySQLDB();
+        $data = array();
+        $data['usuarios'] = array();
+
+        try {
+            $sql = "SELECT * FROM persona";
+
+            if (isModeDebug()) {
+                writeLog(INFO_LOG, "Usuario/getUsuarios", $sql);
+            }
+            $datadb = $db->getData($sql);
+            $data['usuarios'] = $datadb;
+        } catch (Exception $e) {
+            $data['show_message_info'] = true;
+            $data['success'] = false;
+            $data['message'] = ERROR_GENERAL;
+            writeLog(ERROR_LOG, "Usuario/getUsuarios", $e->getMessage());
+        }
+
+        $db->close();
+
+        return $data;
+    }
 /*
     function get_all_info_user($params)
     {
@@ -252,6 +278,43 @@ class Usuario
             $data['success'] = false;
             $data['message'] = ERROR_GENERAL;
             writeLog(ERROR_LOG, "Usuario/registry", $e->getMessage());
+        }
+
+        $db->close();
+        return $data; // Se retorna la informacion generada al momento de crear el usuario
+    }
+
+    function eliminarUsuario($id)
+    {
+        $userID = $id;
+        $db = new PDODB();
+        $data = array();
+        $data['show_message_info'] = true;
+        $paramsDB = array();
+
+        try {
+            $sql = "DELETE FROM persona WHERE id = $userID";
+
+            if (isModeDebug()) {
+                writeLog(INFO_LOG, "Usuario/eliminarUsuario", $sql);
+                writeLog(INFO_LOG, "Usuario/eliminarUsuario", json_encode($paramsDB));
+            }
+
+            // Se invoca a la ejecucion de la sentencia
+            $success = $db->executeInstructionPrepared($sql, $paramsDB);
+
+            $data['success'] = $success;
+            $data['text-center'] = true;
+
+            if ($success) {
+                $data['message'] = "Se eliminó el usuario exitosamente. Pulsa <a href='/blog'>aquí</a> para volver al inicio.";
+            } else {
+                $data['message'] = "Su eliminación no se ha realizado con éxito. Contacte con el Administrador";
+            }
+        } catch (Exception $e) {
+            $data['success'] = false;
+            $data['message'] = ERROR_GENERAL;
+            writeLog(ERROR_LOG, "Usuario/eliminarUsuario", $e->getMessage());
         }
 
         $db->close();

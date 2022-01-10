@@ -24,6 +24,35 @@ class UsuarioController extends Controller {
         $data['registry'] = true; 
         $this->view("UsuarioView", $data); // Se invoca a la Vista
     }
+
+    function displayUsers($page = 1)
+    {
+        $params = array(
+            'page' => intval(filter_var($page, FILTER_VALIDATE_INT))
+        );
+        $data = $this->model->getUsuarios($params);
+
+        $data['displayUsers'] = true;
+
+        $this->view("UsuarioView", $data); // Se invoca a la Vista
+    }
+
+    function eliminarUsuario($params)
+    {
+        $data = array();
+
+        $data = $this->model->eliminarUsuario($params);
+
+        if (isModeDebug()) {
+            writeLog(INFO_LOG, "UsuarioController/eliminarUsuario", json_encode($data));
+        }
+
+        if (!$data['success']) {
+            $data['display'] = true;
+        }
+
+        $this->view("UsuarioView", $data);
+    }
 /*
     function display_profile()
     {

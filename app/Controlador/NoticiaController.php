@@ -1,13 +1,15 @@
 <?php
 
-class NoticiaController extends Controller {
+class NoticiaController extends Controller
+{
 
     private $model;
 
     /*
      * Constructor de la clase que permite asociar con el Modelo
     */
-    function __construct() {
+    function __construct()
+    {
         $this->model = $this->model("Noticia");
     }
 
@@ -15,10 +17,11 @@ class NoticiaController extends Controller {
      * Funcion para poder presentar la forma para el ingreso de los datos de un usuario que se vaya a registrar
      * en el aplicativo y pueda loguearse en otra ocasion
     */
-    function display($page = 1) {
+    function display($page = 1)
+    {
         $params = array(
             'page' => intval(filter_var($page, FILTER_VALIDATE_INT))
-        ); 
+        );
         $data = $this->model->getNoticia($params);
         /*
          * Se activa la bandera para indicarle a la vista que debe presentar las opciones para 
@@ -32,7 +35,8 @@ class NoticiaController extends Controller {
     /*
      * Funcion que permite activar la seña que presentara el formulario para ingreso de los datos de una noticia
     */
-    function displayCrearNoticia() {
+    function displayCrearNoticia()
+    {
         $data = array();
         $data['create'] = true;
 
@@ -43,11 +47,12 @@ class NoticiaController extends Controller {
         $this->view("NoticiaView", $data);
     }
 
-    function crearNoticia() {
+    function crearNoticia()
+    {
         /*
          * Se verifica el contenido del array asociativo "$_POST" que no este vacio
          * y que el metodo usado sea el "POST"
-        */  
+        */
         if (isset($_POST) && $_SERVER['REQUEST_METHOD'] == "POST") {
 
             $data = array();
@@ -58,7 +63,7 @@ class NoticiaController extends Controller {
             // Se verifica el tamaño de la imagen y la información relacionada.
             $revisar = getimagesize($_FILES["imagen"]["tmp_name"]);
 
-            if($revisar !== false) {
+            if ($revisar !== false) {
                 $image = $_FILES['imagen']["tmp_name"];
                 /*
                  * addslashes - Devuelve una cadena con barras invertidas delante de los caracteres predefinidos. 
@@ -92,4 +97,21 @@ class NoticiaController extends Controller {
             $this->view("NoticiaView", $data);
         }
     }
-}   
+
+    function eliminarNoticia($params)
+    {
+        $data = array();
+
+        $data = $this->model->eliminarNoticia($params);
+
+        if (isModeDebug()) {
+            writeLog(INFO_LOG, "NoticiaController/eliminarNoticia", json_encode($data));
+        }
+
+        if (!$data['success']) {
+            $data['display'] = true;
+        }
+
+        $this->view("NoticiaView", $data);
+    }
+}
