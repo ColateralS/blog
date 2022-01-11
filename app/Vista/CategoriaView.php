@@ -31,7 +31,6 @@
                                 <tbody>
                                     <?php
                                     if (isset($data['categorias'])) {
-                                        // foreach ($data['categorias'] as $categoria => $c) {
                                         foreach ($data['categorias'] as $key => $value) {
                                             echo "<tr>";
                                     ?>
@@ -39,7 +38,6 @@
                                             <td><?php echo $value['nombre']; ?></td>
                                             <td><?php echo  $value['descripcion']; ?></td>
                                             <td><a href="/blog/eliminar-categoria/<?php echo $value['id']; ?>"><i class="fas fa-trash icon delete-icon"></i></a></td>
-                                            <!-- <td><a href="/blog/editar-categoria-form"><i class="fas fa-edit icon edit-icon"></i></a></td> -->
                                             <td><a href="/blog/editar-categoria-form/<?php echo $value['id']; ?>"><i class="fas fa-edit icon edit-icon"></i></a></td>
                                     <?php
                                             echo "</tr>";
@@ -105,23 +103,23 @@
                                 <div class="col-12">
 
                                     <form id="formCategoria" action="/blog/editar-categoria/<?php echo $data['params'] ?>" method="POST" novalidate enctype="multipart/form-data">
-                                        <?php 
-                                            print_r($data['categorias']);
-                                            print_r($data['params']);
-                                         ?>
+                                        <?php
+                                        ?>
                                         <div class="row form-group">
                                             <div class="col-12">
                                                 <label for="nombre">Nombre</label>
-                                                <input type="text" name="nombre" class="form-control" id="nombre" maxlength="15" value="<?php if (isset($data['categorias'])) {
-                                                                                                                                            echo $data['categorias']['nombre'];
+                                                <input type="text" name="nombre" class="form-control" id="nombre" value="<?php if (isset($data['categorias'][0])) {
+                                                                                                                                            echo $data['categorias'][0]['nombre'];
                                                                                                                                         } ?>" />
                                             </div>
                                         </div>
 
                                         <div class="row form-group">
                                             <div class="col-12">
-                                                <label for="descripcion">Descripcion</label>
-                                                <textarea name="descripcion" required class="form-control" id="descripcion" cols="20" rows="4"></textarea>
+                                                <label for="descripcion">Descripción</label>
+                                                <input type="text" name="descripcion" class="form-control" id="descripcion" value="<?php if (isset($data['categorias'][0])) {
+                                                                                                                                    echo $data['categorias'][0]['descripcion'];
+                                                                                                                                } ?>" />
                                             </div>
                                         </div>
 

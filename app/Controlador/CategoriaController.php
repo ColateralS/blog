@@ -25,16 +25,6 @@ class CategoriaController extends Controller
         $this->view("CategoriaView", $data); // Se invoca a la Vista
     }
 
-    function maintaince($idCat)
-    {
-
-        $data = $this->model->getCategoriaPorID($idCat);
-
-        $data['display'] = true;
-
-        $this->view("CategoriaView", $data); // Se invoca a la Vista
-    }
-
     function displayCrearCategoria()
     {
         $data = array();
@@ -89,16 +79,16 @@ class CategoriaController extends Controller
         $this->view("CategoriaView", $data);
     }
 
-    function register()
-    {
-    }
-
     function displayEditarCategoria($params)
     {
         $data = array();
         $data['update'] = true;
 
         $data['params'] = $params;
+
+        $dataCat = $this->model->getCategoriaPorID($params);
+
+        $data['categorias'] = $dataCat;
 
         if (isModeDebug()) {
             writeLog(INFO_LOG, "CategoriaController/displayEditarCategoria", json_encode($data));
