@@ -154,6 +154,27 @@ class Usuario
         return $data;
     }
 
+    function getUsuarioPorID($idUser)
+    {
+        $db = new PDODB();
+
+        try {
+            $sql = "SELECT * FROM persona WHERE id = $idUser";
+
+            if (isModeDebug()) {
+                writeLog(INFO_LOG, "Categoria/getUsuarioPorID", $sql);
+            }
+            $data = $db->getData($sql);
+        } catch (Exception $e) {
+            $data['show_message_info'] = true;
+            $data['success'] = false;
+            $data['message'] = ERROR_GENERAL;
+        }
+
+        $db->close();
+        return $data;
+    }
+
     /*
      * Funcion que permite registrar un usuario en el aplicativo
      * Parametro de Entrada: Los datos ingresados en el formulario de ingreso

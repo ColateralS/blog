@@ -132,12 +132,17 @@ class UsuarioController extends Controller {
 
         $data['params'] = $params;
 
+        $dataUser = $this->model->getUsuarioPorID($params);
+
+        $data['usuarios'] = $dataUser;
+
         if (isModeDebug()) {
             writeLog(INFO_LOG, "UsuarioController/displayEditarUsuario", json_encode($data));
         }
 
         $this->view("UsuarioView", $data);
     }
+
 
     function editarUsuario($params)
     {

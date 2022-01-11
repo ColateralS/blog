@@ -122,6 +122,10 @@ class NoticiaController extends Controller
 
         $data['params'] = $params;
 
+        $dataNot = $this->model->getNoticiaPorID($params);
+
+        $data['noticias'] = $dataNot;
+
         if (isModeDebug()) {
             writeLog(INFO_LOG, "NoticiaController/displayEditarNoticia", json_encode($data));
         }
@@ -146,7 +150,7 @@ class NoticiaController extends Controller
                 writeLog(INFO_LOG, "NoticiaController/editarNoticia", json_encode($data));
             }
 
-            $this->view("CategoriaView", $data);
+            $this->view("NoticiaView", $data);
         }
     }
 }

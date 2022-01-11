@@ -32,5 +32,11 @@
             var loadUrl = $(this).attr('href');
             $("#contenido").load(loadUrl);
         });
+        $('#userForm').click(function(event){
+            event.preventDefault();
+            // Extraemos el nombre de la pagina que esta en el link
+            var loadUrl = $(this).attr('href');
+            $("#contenido").load(loadUrl);
+        });
     });
 </script>

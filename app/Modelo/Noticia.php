@@ -70,6 +70,27 @@ class Noticia
         return $data;
     }
 
+    function getNoticiaPorID($idNot)
+    {
+        $db = new PDODB();
+
+        try {
+            $sql = "SELECT * FROM noticia WHERE id = $idNot";
+
+            if (isModeDebug()) {
+                writeLog(INFO_LOG, "Categoria/getNoticiaPorID", $sql);
+            }
+            $data = $db->getData($sql);
+        } catch (Exception $e) {
+            $data['show_message_info'] = true;
+            $data['success'] = false;
+            $data['message'] = ERROR_GENERAL;
+        }
+
+        $db->close();
+        return $data;
+    }
+
     /*
      * Funcion para poder crear una nueva noticia
      * Recibe como parametros los datos ingresados en el correspondiente formulario de ingreso, tales como:
@@ -182,7 +203,6 @@ class Noticia
         $paramsDB = array();
 
         try {
-
             $sql = "UPDATE noticia SET titulo = ?, detalle = ? WHERE id = ?";
 
             $paramsDB = array(

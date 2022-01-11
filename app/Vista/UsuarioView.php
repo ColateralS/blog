@@ -394,23 +394,33 @@
                                 <div class="row form-group">
                                     <div class="col-md-6 col-12">
                                         <label for="nuc">Nuc</label>
-                                        <input type="text" name="nuc" class="form-control" id="nuc" maxlength="15"/>
+                                        <input type="text" name="nuc" class="form-control" id="nuc" maxlength="15" value="<?php if (isset($data['usuarios'][0])) {
+                                                                                                                                echo $data['usuarios'][0]['nuc'];
+                                                                                                                            } ?>" />
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <label for="primerNombre">Primer Nombre (*)</label>
-                                        <input type="text" name="primerNombre" class="form-control" id="pNombre" maxlength="50">
+                                        <input type="text" name="primerNombre" class="form-control" id="pNombre" maxlength="50" value="<?php if (isset($data['usuarios'][0])) {
+                                                                                                                                            echo $data['usuarios'][0]['primerNombre'];
+                                                                                                                                        } ?>">
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <label for="segundoNombre">Segundo Nombre</label>
-                                        <input type="text" name="segundoNombre" class="form-control" id="sNombre" maxlength="50">
+                                        <input type="text" name="segundoNombre" class="form-control" id="sNombre" maxlength="50" value="<?php if (isset($data['usuarios'][0])) {
+                                                                                                                                            echo $data['usuarios'][0]['segundoNombre'];
+                                                                                                                                        } ?>">
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <label for="primerApellido">Primer Apellido (*)</label>
-                                        <input type="text" name="primerApellido" class="form-control" id="pApellido" maxlength="50"/>
+                                        <input type="text" name="primerApellido" class="form-control" id="pApellido" maxlength="50" value="<?php if (isset($data['usuarios'][0])) {
+                                                                                                                                                echo $data['usuarios'][0]['primerApellido'];
+                                                                                                                                            } ?>" />
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <label for="segundoApellido">Segundo Apellido</label>
-                                        <input type="text" name="segundoApellido" class="form-control" id="sApellido" maxlength="50"/>
+                                        <input type="text" name="segundoApellido" class="form-control" id="sApellido" maxlength="50" value="<?php if (isset($data['usuarios'][0])) {
+                                                                                                                                                echo $data['usuarios'][0]['segundoApellido'];
+                                                                                                                                            } ?>" />
                                     </div>
                                 </div>
 

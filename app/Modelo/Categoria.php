@@ -148,12 +148,7 @@ class Categoria
 
         $paramsDB = array();
 
-        $dbCat = new MySQLDB();
-        $dataCat = array();
-        $dataCat['categoriaDatos'] = array();
-
         try {
-
             $sql = "UPDATE categoria SET nombre = ?, descripcion = ? WHERE id = ?";
 
             $paramsDB = array(
@@ -161,11 +156,6 @@ class Categoria
                 $params['descripcion'],
                 $params['id'],
             );
-
-            $sqlCat = "SELECT * FROM categoria";
-
-            $datadbCat = $dbCat->getData($sqlCat);
-            $data['categorias'] = $datadbCat;
 
             if (isModeDebug()) {
                 writeLog(INFO_LOG, "Categoria/editarCategoria", $sql);
