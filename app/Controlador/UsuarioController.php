@@ -1,6 +1,7 @@
 <?php
 
-class UsuarioController extends Controller {
+class UsuarioController extends Controller
+{
 
     private $model;
 
@@ -13,18 +14,22 @@ class UsuarioController extends Controller {
     }
 
     /*
-     * Funcion para poder presentar la forma para el ingreso de los datos de un usuario que se vaya a registrar
+     * Función para poder presentar la forma para el ingreso de los datos de un usuario que se vaya a registrar
      * en el aplicativo y pueda loguearse en otra ocasion
     */
-    function display() {
-         /*
+    function display()
+    {
+        /*
          * Se activa la bandera para indicarle a la vista que debe presentar las opciones para 
          * ingresar los campos de registro de un usuario
         */
-        $data['registry'] = true; 
+        $data['registry'] = true;
         $this->view("UsuarioView", $data); // Se invoca a la Vista
     }
 
+    /*
+     * Función para presentar los datos de los usuarios obtenidos desde la BD.
+    */
     function displayUsers($page = 1)
     {
         $params = array(
@@ -37,10 +42,14 @@ class UsuarioController extends Controller {
         $this->view("UsuarioView", $data); // Se invoca a la Vista
     }
 
+    /*
+    // Función para eliminar la categoría seleccionada por el usuario basandose en su ID.
+    */
     function eliminarUsuario($params)
     {
         $data = array();
 
+        // Almacena en $data la información retornada por la función eliminarUsuario del Modelo.
         $data = $this->model->eliminarUsuario($params);
 
         if (isModeDebug()) {
@@ -51,17 +60,18 @@ class UsuarioController extends Controller {
             $data['display'] = true;
         }
 
-        $this->view("UsuarioView", $data);
+        $this->view("UsuarioView", $data); // Se invoca a la Vista
     }
 
     /*
-     * Funcion que me permite registrar un usuario en el aplicativo
+     * Función que me permite registrar un usuario en el aplicativo
     */
-    function register() {
+    function register()
+    {
         /*
          * Se verifica el contenido del array asociativo "$_POST" que no este vacio
          * y que el metodo usado sea el "POST"
-        */  
+        */
         if (isset($_POST) && $_SERVER['REQUEST_METHOD'] == "POST") {
 
             $data = array();
@@ -125,6 +135,9 @@ class UsuarioController extends Controller {
         }
     }
 
+    /*
+     * Función para presentar el formulario que permite realizar la edición de los datos de el usuario.
+    */
     function displayEditarUsuario($params)
     {
         $data = array();
@@ -132,6 +145,7 @@ class UsuarioController extends Controller {
 
         $data['params'] = $params;
 
+        // Almacena en $data la información retornada por la función getUsuarioPorID del Modelo.
         $dataUser = $this->model->getUsuarioPorID($params);
 
         $data['usuarios'] = $dataUser;
@@ -140,15 +154,22 @@ class UsuarioController extends Controller {
             writeLog(INFO_LOG, "UsuarioController/displayEditarUsuario", json_encode($data));
         }
 
-        $this->view("UsuarioView", $data);
+        $this->view("UsuarioView", $data); // Se invoca a la Vista
     }
 
-
+    /*
+     * Función para editar la categoría. Esta función controla que categoría editar en base al ID seleccionado.
+    */
     function editarUsuario($params)
     {
+        /*
+         * Se verifica el contenido del array asociativo "$_POST" que no este vacio
+         * y que el metodo usado sea el "POST"
+        */
         if (isset($_POST) && $_SERVER['REQUEST_METHOD'] == "POST") {
             $data = array();
 
+            // Se guarda los valores enviados por el usuario.
             $params = array(
                 'nuc' => $_POST['nuc'],
                 'primerNombre' => $_POST['primerNombre'],
@@ -158,14 +179,14 @@ class UsuarioController extends Controller {
                 'id' => $params,
             );
 
+            // Almacena en $data la información retornada por la función editarUsuario del Modelo.
             $data = $this->model->editarUsuario($params);
 
             if (isModeDebug()) {
                 writeLog(INFO_LOG, "UsuarioController/editarUsuario", json_encode($data));
             }
 
-            $this->view("UsuarioView", $data);
+            $this->view("UsuarioView", $data); // Se invoca a la Vista
         }
     }
-
 }

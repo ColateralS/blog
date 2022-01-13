@@ -11,7 +11,7 @@ class LoginController extends Controller {
     }
 
     /*
-     * Funcion para poder presentar la forma para el ingreso de las credenciales y poder
+     * Función para poder presentar la forma para el ingreso de las credenciales y poder
      * logearse en el aplicativo
     */
     function display() {
@@ -25,7 +25,7 @@ class LoginController extends Controller {
     }
 
     /*
-     * Funcion para ejecutar los procesos cuando el usuario que desea ingresar ha dado clic en el boton de Login
+     * Función para ejecutar los procesos cuando el usuario que desea ingresar ha dado clic en el boton de Login
     */
     function login() {
         /*
@@ -87,37 +87,4 @@ class LoginController extends Controller {
             }
         }
     }
-
-    function display_remember() {
-
-        $data = array();
-
-        $data['display_recover_password'] = true;
-
-        $this->view("LoginView", $data);
-    }
-
-    function remember() {
-
-
-        if (isset($_POST) && $_SERVER['REQUEST_METHOD'] == "POST") {
-
-
-            $data = array();
-
-            $params = array(
-                'email' => $_POST['email']
-            );
-
-            $data = $this->model->sendNotificationRememeber($params);
-
-            if (isModeDebug()) {
-                writeLog(INFO_LOG, "Login/remember", json_encode($data));
-            }
-
-            $this->view("LoginView", $data);
-        }
-    }
-    
 }
-?>

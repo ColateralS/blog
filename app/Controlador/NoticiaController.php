@@ -14,7 +14,7 @@ class NoticiaController extends Controller
     }
 
     /*
-     * Funcion para poder presentar la forma para el ingreso de los datos de un usuario que se vaya a registrar
+     * Función para poder presentar la forma para el ingreso de los datos de un usuario que se vaya a registrar
      * en el aplicativo y pueda loguearse en otra ocasion
     */
     function display($page = 1)
@@ -33,7 +33,7 @@ class NoticiaController extends Controller
     }
 
     /*
-     * Funcion que permite activar la seña que presentara el formulario para ingreso de los datos de una noticia
+     * Función que permite activar la seña que presentara el formulario para ingreso de los datos de una noticia
     */
     function displayCrearNoticia()
     {
@@ -47,6 +47,9 @@ class NoticiaController extends Controller
         $this->view("NoticiaView", $data);
     }
 
+    /*
+     * Función para crear la noticia. Esta función controla que se envien datos por el usuario.
+    */
     function crearNoticia()
     {
         /*
@@ -75,6 +78,8 @@ class NoticiaController extends Controller
             }
 
             $date = new DateTime($_POST['fechaPublicacion']);
+
+            // $params almacena todos los datos enviados en el formulario en base al método POST.
             $params = array(
                 'categoriaNoticia' => $_POST['cbxCategoria'],
                 'tituloNoticia' => $_POST['titulo'],
@@ -84,6 +89,7 @@ class NoticiaController extends Controller
                 'estadoNoticia' => trim($_POST['cbxEstado'])
             );
 
+            // Almacena en $data la información retornada por la función crearNoticia del Modelo.
             $data = $this->model->crearNoticia($params);
 
             if (isModeDebug()) {
@@ -94,14 +100,18 @@ class NoticiaController extends Controller
                 $data['display'] = true;
             }
 
-            $this->view("NoticiaView", $data);
+            $this->view("NoticiaView", $data); // Se invoca a la Vista
         }
     }
 
+    /*
+    // Función para eliminar la noticia seleccionada por el usuario basandose en su ID.
+    */
     function eliminarNoticia($params)
     {
         $data = array();
 
+        // Almacena en $data la información retornada por la función eliminarNoticia del Modelo.
         $data = $this->model->eliminarNoticia($params);
 
         if (isModeDebug()) {
@@ -112,9 +122,12 @@ class NoticiaController extends Controller
             $data['display'] = true;
         }
 
-        $this->view("NoticiaView", $data);
+        $this->view("NoticiaView", $data); // Se invoca a la Vista
     }
 
+    /*
+     * Función para presentar el formulario que permite realizar la edición de los datos de la noticia.
+    */
     function displayEditarNoticia($params)
     {
         $data = array();
@@ -122,6 +135,7 @@ class NoticiaController extends Controller
 
         $data['params'] = $params;
 
+        // Almacena en $data la información retornada por la función getNoticiaPorID del Modelo.
         $dataNot = $this->model->getNoticiaPorID($params);
 
         $data['noticias'] = $dataNot;
@@ -130,27 +144,36 @@ class NoticiaController extends Controller
             writeLog(INFO_LOG, "NoticiaController/displayEditarNoticia", json_encode($data));
         }
 
-        $this->view("NoticiaView", $data);
+        $this->view("NoticiaView", $data); // Se invoca a la Vista
     }
 
+    /*
+     * Función para editar la noticia. Esta función controla que noticia editar en base al ID seleccionado.
+    */
     function editarNoticia($params)
     {
+        /*
+         * Se verifica el contenido del array asociativo "$_POST" que no este vacio
+         * y que el metodo usado sea el "POST"
+        */
         if (isset($_POST) && $_SERVER['REQUEST_METHOD'] == "POST") {
             $data = array();
 
+            // Se guarda los valores enviados por el usuario.
             $params = array(
                 'titulo' => $_POST['titulo'],
                 'detalle' => $_POST['detalle'],
                 'id' => $params,
             );
 
+            // Almacena en $data la información retornada por la función editarNoticia del Modelo.
             $data = $this->model->editarNoticia($params);
 
             if (isModeDebug()) {
                 writeLog(INFO_LOG, "NoticiaController/editarNoticia", json_encode($data));
             }
 
-            $this->view("NoticiaView", $data);
+            $this->view("NoticiaView", $data); // Se invoca a la Vista
         }
     }
 }
