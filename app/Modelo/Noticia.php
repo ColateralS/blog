@@ -91,11 +91,8 @@ class Noticia
         return $data;
     }
 
-    /*
-     * Funcion para poder crear una nueva noticia
-     * Recibe como parametros los datos ingresados en el correspondiente formulario de ingreso, tales como:
-     *      'categoriaNoticia', 'tituloNoticia', 'detalleNoticia', 'embebido', 'fechaPublicacion', 'estadoNoticia'
-    */
+    //Función para poder crear una nueva noticia
+    //Recibe como parametros los datos ingresados en el correspondiente formulario de ingreso, tales como: 'categoriaNoticia', 'tituloNoticia', 'detalleNoticia', 'embebido', 'fechaPublicacion', 'estadoNoticia'
     function crearNoticia($params)
     {
         $db = new PDODB(); // Se instancia la clase de la conexion a la Base de Datos
@@ -104,20 +101,13 @@ class Noticia
         $paramsDB = array();
 
         try {
-            /*
-             * Se invoca a la funcion para obtener la siguinete secuencia de una noticia a registrar
-             * en el aplicativo.
-             * Se envian como parametros: La columna unica y secuencial
-             *                            Nombre de la estructura que contiene la columna unica secuencial
-            */
+            //Se invoca a la funcion para obtener la siguinete secuencia de una noticia a registrar en el aplicativo.
+            //Se envian como parametros: La columna unica y secuencial
+            //Nombre de la estructura que contiene la columna unica secuencial
             $id_noticia = $db->getLastId("id", "noticia");
 
-            /*
-             * Se crea la sentencia para ingresar el registro del usuario en la tabla principal, en este caso "persona"
-             * Las columnas para almacenar en la estructura son: 
-             *      id, tipoNuc, nuc, primerNombre, segundoNombre, primerApellido, segundoApellido
-            */
-            $sql = "";
+            //Se crea la sentencia para ingresar el registro del usuario en la tabla principal, en este caso "persona"
+            //Las columnas para almacenar en la estructura son:  id, tipoNuc, nuc, primerNombre, segundoNombre, primerApellido, segundoApellido
             $sql = "INSERT INTO noticia VALUES(?,?,?,?,?,?,?)";
 
             // Se crea un arreglo con los datos ingresados, listos para ser almancenados en la estructura principal "persona"

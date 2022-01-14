@@ -12,12 +12,13 @@ class Usuario
      * esta completa para que no existan errores al momento de grabarla en la Base de Datos
      * Se recibe como parametro, la informacion del usuario a crear
     */
-    function checkErrors($params) {
+    function checkErrors($params)
+    {
         $db = new PDODB(); // Se instancia la clase de la Base de Datos
 
         $errors = array();
         $paramsDB = array();
-    
+
         // Se verifican cada uno de los campos ingresados antes de crear un usuario
         if (empty($params['tipoNuc'])) {
             array_push($errors, "Debe especificar un tipo de documento.");
@@ -26,11 +27,11 @@ class Usuario
             array_push($errors, "Debe especificar un numero de documento.");
         }
 
-        if (empty($params['pNombre'])|| empty($params['sNombre'])) {
+        if (empty($params['pNombre']) || empty($params['sNombre'])) {
             array_push($errors, "Debe especificar un nombre al menos.");
         }
 
-        if (empty($params['pApellido'])|| empty($params['sApellido'])) {
+        if (empty($params['pApellido']) || empty($params['sApellido'])) {
             array_push($errors, "Debe especificar un apellido al menos.");
         }
 
@@ -122,7 +123,8 @@ class Usuario
     /*
      * Funcion que permite verificar si la clave y la confirmacion de la misma es correcta
     */
-    function checkPass($params, &$errors) {
+    function checkPass($params, &$errors)
+    {
         if ($params['pass'] !== $params['confirm-pass']) {
             array_push($errors, "Las contraseña no coinciden.");
         }
@@ -175,11 +177,10 @@ class Usuario
         return $data;
     }
 
-    /*
-     * Funcion que permite registrar un usuario en el aplicativo
-     * Parametro de Entrada: Los datos ingresados en el formulario de ingreso
-    */
-    function registry($params) {
+    //Función que permite registrar un usuario en el aplicativo.
+    //Parametro de Entrada: Los datos ingresados en el formulario de ingreso
+    function registry($params)
+    {
         $db = new PDODB(); // Se instancia la clase de la conexion a la Base de Datos
         $data = array();
         $data['show_message_info'] = true;
@@ -190,14 +191,14 @@ class Usuario
              * Se invoca a la funcion para obtener la siguinete secuencia del usuario a registrar
              * en el aplicativo.
              * Se envian como parametros: La columna unica y secuencial
-             *                            Nombre de la estructura que contiene la columna unica secuencial
+             * Nombre de la estructura que contiene la columna unica secuencial
             */
             $id_user = $db->getLastId("id", "persona");
 
             /*
              * Se crea la sentencia para ingresar el registro del usuario en la tabla principal, en este caso "persona"
              * Las columnas para almacenar en la estructura son: 
-             *      id, tipoNuc, nuc, primerNombre, segundoNombre, primerApellido, segundoApellido
+             * id, tipoNuc, nuc, primerNombre, segundoNombre, primerApellido, segundoApellido
             */
             $sql = "";
             $sql = "INSERT INTO persona VALUES(?,?,?,?,?,?,?)";
