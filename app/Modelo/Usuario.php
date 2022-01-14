@@ -132,28 +132,28 @@ class Usuario
 
     function getUsuarios($params)
     {
-        $db = new MySQLDB();
-        $data = array();
-        $data['usuarios'] = array();
+        $db = new MySQLDB(); //Crea un nuevo Objeto de la Clase MySQLDB.
+        $data = array(); //Crea un nuevo arreglo para $data.
+        $data['usuarios'] = array(); //Crea un arreglo con el identificador 'usuarios'.
 
         try {
-            $sql = "SELECT * FROM persona";
+            $sql = "SELECT * FROM persona"; //Sentencia SQL
 
             if (isModeDebug()) {
                 writeLog(INFO_LOG, "Usuario/getUsuarios", $sql);
             }
-            $datadb = $db->getData($sql);
-            $data['usuarios'] = $datadb;
-        } catch (Exception $e) {
+            $datadb = $db->getData($sql); //Almacena la info de la consulta ejecutada.
+            $data['usuarios'] = $datadb; //Almacena en el arreglo la información obtenida.
+        } catch (Exception $e) { //Banderas para desplegar errores o 
             $data['show_message_info'] = true;
             $data['success'] = false;
             $data['message'] = ERROR_GENERAL;
             writeLog(ERROR_LOG, "Usuario/getUsuarios", $e->getMessage());
         }
 
-        $db->close();
+        $db->close(); //Cierra la conexión a la BD.
 
-        return $data;
+        return $data; //Retorna la información obtenida.
     }
 
     function getUsuarioPorID($idUser)
@@ -177,8 +177,10 @@ class Usuario
         return $data;
     }
 
-    //Función que permite registrar un usuario en el aplicativo.
-    //Parametro de Entrada: Los datos ingresados en el formulario de ingreso
+    /*
+     * Funcion que permite registrar un usuario en el aplicativo
+     * Parametro de Entrada: Los datos ingresados en el formulario de ingreso
+    */
     function registry($params)
     {
         $db = new PDODB(); // Se instancia la clase de la conexion a la Base de Datos
@@ -191,14 +193,14 @@ class Usuario
              * Se invoca a la funcion para obtener la siguinete secuencia del usuario a registrar
              * en el aplicativo.
              * Se envian como parametros: La columna unica y secuencial
-             * Nombre de la estructura que contiene la columna unica secuencial
+             *                            Nombre de la estructura que contiene la columna unica secuencial
             */
             $id_user = $db->getLastId("id", "persona");
 
             /*
              * Se crea la sentencia para ingresar el registro del usuario en la tabla principal, en este caso "persona"
              * Las columnas para almacenar en la estructura son: 
-             * id, tipoNuc, nuc, primerNombre, segundoNombre, primerApellido, segundoApellido
+             *      id, tipoNuc, nuc, primerNombre, segundoNombre, primerApellido, segundoApellido
             */
             $sql = "";
             $sql = "INSERT INTO persona VALUES(?,?,?,?,?,?,?)";
@@ -273,14 +275,14 @@ class Usuario
 
     function eliminarUsuario($id)
     {
-        $userID = $id;
-        $db = new PDODB();
-        $data = array();
-        $data['show_message_info'] = true;
-        $paramsDB = array();
+        $userID = $id; //Asigna el ID del usuario.
+        $db = new PDODB(); //Crea un nuevo Objeto de la Clase PDODB.
+        $data = array(); //Crea un nuevo arreglo para $data.
+        $data['show_message_info'] = true; //Crea una bandera para mostrar un mensaje de información.
+        $paramsDB = array(); //Crea un arreglo para los parámetros
 
         try {
-            $sql = "DELETE FROM persona WHERE id = $userID";
+            $sql = "DELETE FROM persona WHERE id = $userID"; //Sentencia SQL.
 
             if (isModeDebug()) {
                 writeLog(INFO_LOG, "Usuario/eliminarUsuario", $sql);
@@ -310,16 +312,17 @@ class Usuario
 
     function editarUsuario($params)
     {
-        $db = new PDODB();
-        $data = array();
+        $db = new PDODB(); //Crea un nuevo Objeto de la Clase PDODB.
+        $data = array(); //Crea un nuevo arreglo para $data.
         $data['show_message_info'] = true;
 
-        $paramsDB = array();
+        $paramsDB = array(); //Crea un arreglo para los parámetros.
 
         try {
 
-            $sql = "UPDATE persona SET nuc = ?, primerNombre = ?, segundoNombre = ?, primerApellido = ?, segundoApellido = ? WHERE id = ?";
+            $sql = "UPDATE persona SET nuc = ?, primerNombre = ?, segundoNombre = ?, primerApellido = ?, segundoApellido = ? WHERE id = ?"; //Sentencia SQL
 
+            //Parámetros
             $paramsDB = array(
                 $params['nuc'],
                 $params['primerNombre'],
@@ -335,21 +338,21 @@ class Usuario
             }
 
             $data['success'] = $db->executeInstructionPrepared($sql, $paramsDB);
-
             $data['text-center'] = true;
+
             if ($data['success']) {
                 $data['message'] = "La edición se ha completado con éxito. Pulsa <a href='/blog'>aquí</a> para volver al inicio.";
             } else {
                 $data['message'] = "La edición no se ha realizado con éxito.";
             }
-        } catch (Exception $e) {
+        } catch (Exception $e) { //Banderas para desplegar errores
             $data['success'] = false;
             $data['message'] = ERROR_GENERAL;
             writeLog(ERROR_LOG, "Usuario/editarUsuario", $e->getMessage());
         }
 
-        $db->close();
+        $db->close(); //Cierra la conexión a la BD.
 
-        return $data;
+        return $data; //Retorna la información obtenida.
     }
 }

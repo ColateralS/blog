@@ -47,12 +47,15 @@ class NoticiaController extends Controller
         $this->view("NoticiaView", $data);
     }
 
-    //Función para crear la noticia. Esta función controla que se envien datos por el usuario.
+    /*
+     * Función para crear la noticia. Esta función controla que se envien datos por el usuario.
+    */
     function crearNoticia()
     {
-
-        //Se verifica el contenido del array asociativo "$_POST" que no este vacio y que el metodo usado sea el "POST"
-
+        /*
+         * Se verifica el contenido del array asociativo "$_POST" que no este vacio
+         * y que el metodo usado sea el "POST"
+        */
         if (isset($_POST) && $_SERVER['REQUEST_METHOD'] == "POST") {
 
             $data = array();

@@ -13,7 +13,9 @@ class CategoriaController extends Controller
         $this->model = $this->model("Categoria");
     }
 
-    //Función para presentar los datos de la categoría obtenidos desde la BD.
+    /*
+     * Función para presentar los datos de la categoría obtenidos desde la BD.
+    */
     function display($page = 1)
     {
         $params = array(
@@ -28,7 +30,9 @@ class CategoriaController extends Controller
         $this->view("CategoriaView", $data); // Se invoca a la Vista
     }
 
-    //Función para presentar el formulario que permite realizar la creación de los datos de la categoría.
+    /*
+     * Función para presentar el formulario que permite realizar la creación de los datos de la categoría.
+    */
     function displayCrearCategoria()
     {
         $data = array();
@@ -41,10 +45,15 @@ class CategoriaController extends Controller
         $this->view("CategoriaView", $data); // Se invoca a la Vista
     }
 
-    //Función para crear la categoría. Esta función controla que se envien datos por el usuario.
+    /*
+     * Función para crear la categoría. Esta función controla que se envien datos por el usuario.
+    */
     function crearCategoria()
     {
-        //Se verifica el contenido del array asociativo "$_POST" que no este vacio y que el metodo usado sea el "POST"
+        /*
+         * Se verifica el contenido del array asociativo "$_POST" que no este vacio
+         * y que el metodo usado sea el "POST"
+        */
         if (isset($_POST) && $_SERVER['REQUEST_METHOD'] == "POST") {
 
             $data = array();
@@ -72,7 +81,9 @@ class CategoriaController extends Controller
         }
     }
 
+    /*
     // Función para eliminar la categoría seleccionada por el usuario basandose en su ID.
+    */
     function eliminarCategoria($params)
     {
         $data = array();
@@ -91,7 +102,9 @@ class CategoriaController extends Controller
         $this->view("CategoriaView", $data); // Se invoca a la Vista
     }
 
-    // Función para presentar el formulario que permite realizar la edición de los datos de la categoría.
+    /*
+     * Función para presentar el formulario que permite realizar la edición de los datos de la categoría.
+    */
     function displayEditarCategoria($params)
     {
         $data = array();
@@ -111,10 +124,15 @@ class CategoriaController extends Controller
         $this->view("CategoriaView", $data); // Se invoca a la Vista
     }
 
-    // Función para editar la categoría. Esta función controla que categoría editar en base al ID seleccionado.
+    /*
+     * Función para editar la categoría. Esta función controla que categoría editar en base al ID seleccionado.
+    */
     function editarCategoria($params)
     {
-        // Se verifica el contenido del array asociativo "$_POST" que no este vacio y que el metodo usado sea el "POST"
+        /*
+         * Se verifica el contenido del array asociativo "$_POST" que no este vacio
+         * y que el metodo usado sea el "POST"
+        */
         if (isset($_POST) && $_SERVER['REQUEST_METHOD'] == "POST") {
             $data = array();
 

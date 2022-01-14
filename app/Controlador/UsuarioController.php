@@ -27,16 +27,18 @@ class UsuarioController extends Controller
         $this->view("UsuarioView", $data); // Se invoca a la Vista
     }
 
-    /*
-     * Función para presentar los datos de los usuarios obtenidos desde la BD.
-    */
+
+    //Función para presentar los datos de los usuarios obtenidos desde la BD.
     function displayUsers($page = 1)
     {
         $params = array(
             'page' => intval(filter_var($page, FILTER_VALIDATE_INT))
         );
+
+        // Almacena en $data la información retornada por la función getUsuarios del Modelo.
         $data = $this->model->getUsuarios($params);
 
+        //Se activa la bandera para indicarle a la vista que debe presentar la información de los usuarios.
         $data['displayUsers'] = true;
 
         $this->view("UsuarioView", $data); // Se invoca a la Vista

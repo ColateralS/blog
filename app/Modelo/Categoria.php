@@ -10,32 +10,32 @@ class Categoria
     {
     }
 
-    /*
-     * Funcion para poder obtener la informacion almacenada correspondiente a una categoria
-    */
+    
+    //Función para poder obtener la informacion almacenada correspondiente a una categoria
     function getCategoria($params)
     {
-        $db = new MySQLDB();
-        $data = array();
-        $data['categorias'] = array();
+        $db = new MySQLDB(); //Crea un nuevo Objeto de la Clase MySQLDB.
+        $data = array(); //Crea un nuevo arreglo para $data.
+        $data['categorias'] = array(); //Crea un arreglo con el identificador 'categorias'.
 
         try {
+            //Sentencia SQL.
             $sql = "SELECT * FROM categoria";
 
             if (isModeDebug()) {
                 writeLog(INFO_LOG, "Categoria/getCategoria", $sql);
             }
-            $datadb = $db->getData($sql);
-            $data['categorias'] = $datadb;
-        } catch (Exception $e) {
+            $datadb = $db->getData($sql); //Almacena la info de la consulta ejecutada.
+            $data['categorias'] = $datadb; //Almacena en el arreglo 'categorias' la información obtenida.
+        } catch (Exception $e) { //Errores
             $data['show_message_info'] = true;
             $data['success'] = false;
             $data['message'] = ERROR_GENERAL;
             writeLog(ERROR_LOG, "Portada/getNoticia", $e->getMessage());
         }
 
-        $db->close();
-        return $data;
+        $db->close(); //Cierra la conexión a la BD.
+        return $data; //Retorna la información obtenida.
     }
 
     function getCategoriaPorID($idCat)
@@ -105,13 +105,14 @@ class Categoria
 
     function eliminarCategoria($id)
     {
-        $catedoryID = $id;
-        $db = new PDODB();
-        $data = array();
-        $data['show_message_info'] = true;
-        $paramsDB = array();
+        $catedoryID = $id; //Asigna el ID de la categoría.
+        $db = new PDODB(); //Crea un nuevo Objeto de la Clase PDODB.
+        $data = array(); //Crea un nuevo arreglo para $data.
+        $data['show_message_info'] = true; //Crea una bandera para mostrar un mensaje de información.
+        $paramsDB = array(); //Crea un arreglo para los parámetros
 
         try {
+            //Sentencia SQL
             $sql = "DELETE FROM categoria WHERE id = $catedoryID";
 
             if (isModeDebug()) {
@@ -142,15 +143,18 @@ class Categoria
 
     function editarCategoria($params)
     {
-        $db = new PDODB();
-        $data = array();
-        $data['show_message_info'] = true;
+        $db = new PDODB(); //Crea un nuevo Objeto de la Clase PDODB.
+        $data = array(); //Crea un nuevo arreglo para $data.
+        $data['show_message_info'] = true; //Crea una bandera para mostrar un mensaje de información.
 
-        $paramsDB = array();
+        $paramsDB = array(); //Crea un arreglo para los parámetros
 
         try {
+
+            //Sentencia SQL
             $sql = "UPDATE categoria SET nombre = ?, descripcion = ? WHERE id = ?";
 
+            //Parámetros
             $paramsDB = array(
                 $params['nombre'],
                 $params['descripcion'],
